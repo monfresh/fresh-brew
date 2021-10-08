@@ -42,7 +42,7 @@ In your Terminal window, copy and paste the command below, then press `return`.
 bash <(curl -s https://raw.githubusercontent.com/monfresh/fresh-brew/main/fresh-press)
 ```
 
-The [script](https://github.com/monfresh/fresh-brew/main/pour.sh) itself is
+The [script](https://github.com/monfresh/fresh-brew/blob/main/pour.sh) itself is
 available in this repo for you to review if you want to see what it does
 and how it works.
 
@@ -121,8 +121,8 @@ globally, so if you need two different versions of a tool for different projects
 this script might not work for you.
 
 For an example of a customization that should work across projects, view the
-[fresh-brew.local](https://github.com/monfresh/fresh-brew/main/fresh-brew.local)
-and [Brewfile.local](https://github.com/monfresh/fresh-brew/main/Brewfile.local)
+[fresh-brew.local](https://github.com/monfresh/fresh-brew/blob/main/fresh-brew.local)
+and [Brewfile.local](https://github.com/monfresh/fresh-brew/blob/main/Brewfile.local)
 in this repo, or download them:
 
 ```sh
