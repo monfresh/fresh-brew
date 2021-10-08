@@ -38,8 +38,13 @@ and once it appears, press `return` to launch it.
 
 In your Terminal window, copy and paste the command below, then press `return`.
 
-```sh
+```shell
 bash <(curl -s https://raw.githubusercontent.com/monfresh/fresh-brew/main/fresh-press)
+```
+
+For fish shell:
+```shell
+bash (curl -s https://raw.githubusercontent.com/monfresh/fresh-brew/main/fresh-press | psub)
 ```
 
 The [script](https://github.com/monfresh/fresh-brew/blob/main/pour.sh) itself is
@@ -52,10 +57,6 @@ prompt comes from Homebrew, because it needs permissions to write to the
 `/usr/local` (or `/opt/homebrew` on M1 Macs) directory.
 
 **Once the script is done, quit and relaunch Terminal.**
-
-I recommend running the script regularly to keep your computer up
-to date. Once the script has been installed, you'll be able to run it at your
-convenience by typing `freshbrew` and pressing `return` in your Terminal.
 
 [spotlight]: https://support.apple.com/en-us/HT204014
 
@@ -79,21 +80,6 @@ brew doctor
 
 You should see a message that "Your system is ready to brew."
 
-
-## Check the Node installation
-
-To verify if Node was installed and configured:
-
-```shell
-node --version
-```
-You should see `v14.17.1` or later
-
-```shell
-nodenv help
-```
-You should see various commands you can run with `nodenv`.
-
 ## Next steps
 
 The next thing you'll want to do after running the script is to [configure Git with your name, email, and preferred editor](https://www.moncefbelyamani.com/first-things-to-configure-before-using-git/).
@@ -110,9 +96,6 @@ The next thing you'll want to do after running the script is to [configure Git w
 [Nodenv]: https://github.com/nodenv/nodenv
 [yarn]: https://yarnpkg.com
 
-It should take less than 15 minutes to install (depends on your machine and
-internet connection).
-
 ## Customize in `/fresh-brew.local` and `/Brewfile.local`
 
 By adding these two files inside your project, you can customize each project
@@ -127,12 +110,14 @@ in this repo, or download them:
 
 ```sh
 # Download the sample files to your computer
-curl --remote-name https://raw.githubusercontent.com/monfresh/fresh-brew/fresh-brew.local
-curl --remote-name https://raw.githubusercontent.com/monfresh/fresh-brew/Brewfile.local
+curl --remote-name https://raw.githubusercontent.com/monfresh/fresh-brew/main/fresh-brew.local
+curl --remote-name https://raw.githubusercontent.com/monfresh/fresh-brew/main/Brewfile.local
+curl --remote-name https://raw.githubusercontent.com/monfresh/fresh-brew/main/.node-version
 
 # open the files in your text editor
 open fresh-brew.local
 open Brewfile.local
+open .node-version
 ```
 
 These files should be placed at the root of your project.
@@ -156,6 +141,20 @@ In the example files above, `nodenv` and `yarn` will be installed globally via
 Homebrew, but then you can install different versions of `node` using `nodenv`,
 and you can switch between them by specifying the node version in a `.node-version`
 file at the root of your project. That way, you can have one project that uses
-Node version 14.7.1, and another that uses Node version 16.9.1. Each project will
+Node version 14.7.1, and another that uses Node version 16.9.1. Each project should
 have its own `fresh-brew.local` file that installs the desired version using
-`nodenv`.
+`nodenv` based on the one specified in `.node-version`.
+
+### Check the Node installation
+
+To verify if Node was installed and configured:
+
+```shell
+node --version
+```
+You should see the desired version based on your `.node-version` file.
+
+```shell
+nodenv help
+```
+You should see various commands you can run with `nodenv`.

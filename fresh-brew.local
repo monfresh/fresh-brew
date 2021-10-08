@@ -19,12 +19,14 @@ if [ -f "Brewfile.local" ]; then
   fi
 fi
 
-fancy_echo "Installing node 14.17.1 ..."
-if nodenv versions | grep 14.17.1; then
-  fancy_echo "node 14.17.1 already installed."
+node_version="$(cat < ".node-version")"
+
+fancy_echo "Installing node "$node_version" ..."
+if nodenv versions | grep "$node_version"; then
+  fancy_echo "node "$node_version" already installed."
 else
   brew upgrade node-build
-  nodenv install 14.17.1
+  nodenv install "$node_version"
 fi
 fancy_echo "Configuring Nodenv..."
 configure_shell_file_for_nodenv

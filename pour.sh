@@ -135,10 +135,6 @@ tap_is_installed() {
   brew tap | grep -Fqx "$1"
 }
 
-if [[ ! $SHELL == *fish ]]; then
-  append_to_file "$shell_file" "alias freshbrew='bash <(curl -s https://raw.githubusercontent.com/trussworks/fresh-brew/main/pour.sh)'"
-fi
-
 fancy_echo 'Welcome to the fresh-brew script!'
 fancy_echo 'You should be up and running with a working dev environment in a few minutes.'
 fancy_echo 'The following lines are to help debug any issues:'
