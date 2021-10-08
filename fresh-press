@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+curl --remote-name https://raw.githubusercontent.com/monfresh/fresh-brew/main/pour.sh
+curl --remote-name https://raw.githubusercontent.com/monfresh/fresh-brew/main/Brewfile
+/usr/bin/env bash pour.sh 2>&1 | tee ~/fresh-brew.log
