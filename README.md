@@ -39,15 +39,15 @@ and once it appears, press `return` to launch it.
 In your Terminal window, copy and paste the command below, then press `return`.
 
 ```shell
-bash <(curl -s https://raw.githubusercontent.com/monfresh/fresh-brew/main/fresh-press)
+bash <(curl -s https://raw.githubusercontent.com/trussworks/fresh-brew/main/fresh-press)
 ```
 
 For fish shell:
 ```shell
-bash (curl -s https://raw.githubusercontent.com/monfresh/fresh-brew/main/fresh-press | psub)
+bash (curl -s https://raw.githubusercontent.com/trussworks/fresh-brew/main/fresh-press | psub)
 ```
 
-The [script](https://github.com/monfresh/fresh-brew/blob/main/pour.sh) itself is
+The [script](https://github.com/trussworks/fresh-brew/blob/main/pour.sh) itself is
 available in this repo for you to review if you want to see what it does
 and how it works.
 
@@ -65,7 +65,7 @@ prompt comes from Homebrew, because it needs permissions to write to the
 Your last `fresh-brew` run will be saved to a file called `fresh-brew.log` in your home
 folder. Read through it to see if you can debug the issue yourself. If not,
 copy the entire contents of `fresh-brew.log` into a
-[new GitHub Issue](https://github.com/monfresh/fresh-brew/issues/new), or attach the whole log file to the issue.
+[new GitHub Issue](https://github.com/trussworks/fresh-brew/issues/new), or attach the whole log file to the issue.
 
 ## How to tell if the script worked
 
@@ -104,15 +104,15 @@ globally, so if you need two different versions of a tool for different projects
 this script might not work for you.
 
 For an example of a customization that should work across projects, view the
-[fresh-brew.local](https://github.com/monfresh/fresh-brew/blob/main/fresh-brew.local)
-and [Brewfile.local](https://github.com/monfresh/fresh-brew/blob/main/Brewfile.local)
+[fresh-brew.local](https://github.com/trussworks/fresh-brew/blob/main/fresh-brew.local)
+and [Brewfile.local](https://github.com/trussworks/fresh-brew/blob/main/Brewfile.local)
 in this repo, or download them:
 
 ```sh
 # Download the sample files to your computer
-curl --remote-name https://raw.githubusercontent.com/monfresh/fresh-brew/main/fresh-brew.local
-curl --remote-name https://raw.githubusercontent.com/monfresh/fresh-brew/main/Brewfile.local
-curl --remote-name https://raw.githubusercontent.com/monfresh/fresh-brew/main/.node-version
+curl --remote-name https://raw.githubusercontent.com/trussworks/fresh-brew/main/fresh-brew.local
+curl --remote-name https://raw.githubusercontent.com/trussworks/fresh-brew/main/Brewfile.local
+curl --remote-name https://raw.githubusercontent.com/trussworks/fresh-brew/main/.node-version
 
 # open the files in your text editor
 open fresh-brew.local
