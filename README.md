@@ -88,8 +88,6 @@ The next thing you'll want to do after running the script is to [configure Git w
 
 - [GitHub CLI] brings GitHub to your terminal.
 - [Homebrew] for managing operating system libraries
-- [Nodenv] to easily install and manage Node versions
-- [Yarn] to manage JS dependencies
 
 [github cli]: https://cli.github.com
 [homebrew]: http://brew.sh/
