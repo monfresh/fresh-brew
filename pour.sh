@@ -127,14 +127,6 @@ case "$SHELL" in
     ;;
 esac
 
-brew_is_installed() {
-  brew list -1 --formula | grep -Fqx "$1"
-}
-
-tap_is_installed() {
-  brew tap | grep -Fqx "$1"
-}
-
 fancy_echo 'Welcome to the fresh-brew script!'
 fancy_echo 'You should be up and running with a working dev environment in a few minutes.'
 fancy_echo 'The following lines are to help debug any issues:'
@@ -155,17 +147,9 @@ uname -m
 
 fancy_echo "====End of debugging===="
 
+fancy_echo "====Getting ready to install or update Homebrew===="
 install_or_update_homebrew
-
-# Remove brew-cask since it is now installed as part of brew tap caskroom/cask.
-# See https://github.com/caskroom/homebrew-cask/releases/tag/v0.60.0
-if brew_is_installed 'brew-cask'; then
-  brew uninstall --force 'brew-cask'
-fi
-
-if tap_is_installed 'caskroom/versions'; then
-  brew untap caskroom/versions
-fi
+fancy_echo "====Done installing or updating Homebrew===="
 
 fancy_echo "Verifying the Homebrew installation..."
 if brew doctor; then
@@ -175,7 +159,7 @@ else
   echo "Review the Homebrew messages to see if any action is needed."
 fi
 
-fancy_echo "Installing formulas and casks from the Brewfile ..."
+fancy_echo "Installing formulas and casks from the Brewfile..."
 if brew bundle --file="Brewfile"; then
   fancy_echo "All formulas were installed successfully."
 else
